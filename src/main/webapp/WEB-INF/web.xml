@@ -9,56 +9,22 @@
         <param-name>baseUrl</param-name>
         <param-value>http://uml.mvnsearch.org</param-value>
     </context-param>
-    <servlet>
-        <servlet-name>PlantumlGistServlet</servlet-name>
-        <servlet-class>org.mvnsearch.plantuml.gist.PlantumlGistServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PlantumlGithubServlet</servlet-name>
-        <servlet-class>org.mvnsearch.plantuml.github.PlantumlGithubServlet</servlet-class>
-    </servlet>
+
     <servlet>
         <servlet-name>PlantumlGitlabServlet</servlet-name>
         <servlet-class>org.mvnsearch.plantuml.gitlab.PlantumlGitlabServlet</servlet-class>
         <init-param>
             <param-name>gitlabUrl</param-name>
-            <param-value>http://gitlab.mvnsearch.org</param-value>
+            <param-value>http://192.168.20.21:8088</param-value>
         </init-param>
         <init-param>
             <param-name>userToken</param-name>
-            <param-value>xxxxxx</param-value>
+            <param-value>u3KFLEopy3u6fctRLhcX</param-value>
         </init-param>
     </servlet>
-    <servlet>
-        <servlet-name>PlantUmlStashServlet</servlet-name>
-        <servlet-class>org.mvnsearch.plantuml.stash.PlantUmlStashServlet</servlet-class>
-        <init-param>
-            <param-name>stashUrl</param-name>
-            <param-value>http://git.mvnsearch.org</param-value>
-        </init-param>
-        <init-param>
-            <param-name>username</param-name>
-            <param-value>xxx</param-value>
-        </init-param>
-        <init-param>
-            <param-name>password</param-name>
-            <param-value>xxx</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PlantumlGistServlet</servlet-name>
-        <url-pattern>/gist/*</url-pattern>
-    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>PlantumlGitlabServlet</servlet-name>
-        <url-pattern>/gitlab/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PlantumlGithubServlet</servlet-name>
-        <url-pattern>/github/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PlantUmlStashServlet</servlet-name>
-        <url-pattern>/stash/*</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>

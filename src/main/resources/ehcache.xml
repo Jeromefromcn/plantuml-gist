@@ -7,8 +7,8 @@
            eternal="false"
            overflowToDisk="true"
            diskPersistent="true"
-           timeToIdleSeconds="120"
-           timeToLiveSeconds="120" memoryStoreEvictionPolicy="LFU"/>
+           timeToIdleSeconds="20"
+           timeToLiveSeconds="20" memoryStoreEvictionPolicy="LFU"/>
     <cache name="uniqueImages"
            maxElementsInMemory="800"
            maxElementsOnDisk="2000"

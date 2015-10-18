@@ -1,11 +1,7 @@
 package org.mvnsearch.plantuml.gitlab;
 
-import net.sf.ehcache.Cache;
-import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
-import net.sourceforge.plantuml.SourceStringReader;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.IOUtils;
 import org.gitlab.api.GitlabAPI;
 import org.gitlab.api.http.GitlabHTTPRequestor;
@@ -15,10 +11,8 @@ import org.mvnsearch.plantuml.PlantUmlBaseServlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
@@ -26,7 +20,7 @@ import java.util.Map;
 
 /**
  * Plantuml gitlab servlet
- * <p/>
+ * <p>
  * demo url: http://localhost:8080/gitlab/uic/uic-structure/blob/master/uml/uic-deployment.puml
  *
  * @author linux_china
@@ -61,8 +55,8 @@ public class PlantumlGitlabServlet extends PlantUmlBaseServlet {
         byte[] imageContent = renderError;
         String requestURI = request.getRequestURI();
         //remove mapping
-        String filePath = requestURI.substring(requestURI.indexOf("/", 1));
-        if (filePath.endsWith(".puml")) {
+        if (requestURI.indexOf("/", 1) != -1 && requestURI.endsWith(".puml")) {
+            String filePath = requestURI.substring(requestURI.indexOf("/", 1));
             Element element = imageCache.get(filePath);
             if (element != null && !element.isExpired()) {  //cache
                 imageContent = (byte[]) element.getObjectValue();
