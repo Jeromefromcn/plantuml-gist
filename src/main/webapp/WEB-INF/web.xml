@@ -5,21 +5,16 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5">
 
-    <context-param>
-        <param-name>baseUrl</param-name>
-        <param-value>http://uml.mvnsearch.org</param-value>
-    </context-param>
-
     <servlet>
         <servlet-name>PlantumlGitlabServlet</servlet-name>
         <servlet-class>org.mvnsearch.plantuml.gitlab.PlantumlGitlabServlet</servlet-class>
         <init-param>
             <param-name>gitlabUrl</param-name>
-            <param-value>http://192.168.20.21:8088</param-value>
+            <param-value>http://192.168.20.63:8088</param-value>
         </init-param>
         <init-param>
             <param-name>userToken</param-name>
-            <param-value>u3KFLEopy3u6fctRLhcX</param-value>
+            <param-value>89R5iMCJbxh8ixKTFZmU</param-value>
         </init-param>
     </servlet>
 
